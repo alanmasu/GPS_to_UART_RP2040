@@ -4,6 +4,7 @@
 #define GPS_EN 18
 #define BUCK_EN 11
 #define ALIVE_LED 20
+#define BUZZER 21
 
 void setup() {
   //Serial port for debugging purposes
@@ -19,9 +20,12 @@ void setup() {
   pinMode(ALIVE_LED, OUTPUT);
 
   //Set BUCK_EN pin
-  digitalWrite(BUCK_EN, OUTPUT);
-  digitalWrite(BUCK_EN, HIGH);
- 
+  pinMode(BUCK_EN, OUTPUT);
+  digitalWrite(BUCK_EN, HIGH);  
+
+  //Set BUZZER pin
+  pinMode(BUZZER, OUTPUT);
+   
   // //Open a serial connection for the GPS module
   Serial2.setTX(4);
   Serial2.setRX(5);
